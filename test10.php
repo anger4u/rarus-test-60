@@ -9,7 +9,8 @@ function isContinuousSequence($arr) {
 
     $item = $arr[0];
 
-    for ($i = 1; $i < count($arr); $i++) {
+    for ($i = 1; $i < count($arr); $i++)
+    {
         if ($arr[$i] !== ++$item) return false;
     }
 
