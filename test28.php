@@ -2,9 +2,7 @@
 
 function wordsCount($fileName) {
 
-    $str = file_get_contents('.\test-files\\' . $fileName);
-
-    print_r($path);
+    $str = file_get_contents('test-files/' . $fileName);
 
     if (!empty($str)) {
         $str = array_filter(explode(' ', $str));
@@ -22,4 +20,4 @@ function wordsCount($fileName) {
     return $result;
 }
 
-wordsCount($argv[1]);
+print_r(wordsCount($argv[1]));
