@@ -1,5 +1,7 @@
 <?php
 
+// Это как доп решение через php функцию <========================================
+
 $host = 'localhost'; // имя хоста (уточняется у провайдера)
 $database = 'RARUS_TESTS'; // имя базы данных, которую вы должны создать
 $user = 'root'; // заданное вами имя пользователя, либо определенное провайдером
@@ -17,6 +19,18 @@ function changeTable($dbh, $table, $columns)
     $query3 = "ALTER TABLE " . $table . " CHANGE name " . $columns[1];
 
     $query4 = "ALTER TABLE " . $table . " ADD COLUMN " . $columns[2];
+
+    print_r($query1);
+    echo '<br>';
+
+    print_r($query2);
+    echo '<br>';
+
+    print_r($query3);
+    echo '<br>';
+
+    print_r($query4);
+    echo '<br>';
 
     mysqli_query($dbh, $query1);
     mysqli_query($dbh, $query2);

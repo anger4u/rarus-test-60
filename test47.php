@@ -1,5 +1,7 @@
 <?php
 
+// Это как доп решение через php функцию <========================================
+
 $host = 'localhost'; // имя хоста (уточняется у провайдера)
 $database = 'RARUS_TESTS'; // имя базы данных, которую вы должны создать
 $user = 'root'; // заданное вами имя пользователя, либо определенное провайдером
@@ -19,6 +21,9 @@ function createTable($dbh, $tName, $fields)
 
     $query = "CREATE TABLE " . $tName . " (" . $field . "PRIMARY KEY (" . $fields[0] . "))";
 
+    print_r($query);
+    echo '<br>';
+
     mysqli_query($dbh, $query);
 }
 
@@ -32,6 +37,9 @@ function createTable2($dbh, $tName, $fields)
     $field = $fields0  . $fields1 . $fields2 . $fields3;
 
     $query = "CREATE TABLE " . $tName . " (" . $field . "PRIMARY KEY (" . $fields[0] . "), FOREIGN KEY (" . $fields[1] . ") REFERENCES users (username))";
+
+    print_r($query);
+    echo '<br>';
 
     mysqli_query($dbh, $query);
 }

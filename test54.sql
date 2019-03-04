@@ -1,0 +1,1 @@
+SELECT DISTINCT YEAR(birthday), COUNT(YEAR(birthday)) FROM users WHERE birthday IS NOT NULL GROUP BY YEAR(birthday) ORDER BY birthday;

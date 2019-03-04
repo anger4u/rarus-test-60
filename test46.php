@@ -1,5 +1,8 @@
 <?php
 
+// Так как в задаче не сказано ни про функции ни про запросы, сделал два файла test46.php и test46.sql соответственно
+// c функциями php и запросами sql.
+
 $host = 'localhost'; // имя хоста (уточняется у провайдера)
 $database = 'RARUS_TESTS'; // имя базы данных, которую вы должны создать
 $user = 'root'; // заданное вами имя пользователя, либо определенное провайдером
@@ -14,6 +17,9 @@ function createTable($dbh, $tName, $fields)
 
     $query = "CREATE TABLE " . $tName . " (" . $field . "PRIMARY KEY (" . $fields[0] . "))";
 
+    print_r($query);
+    echo '<br>';
+
     mysqli_query($dbh, $query);
 }
 
@@ -26,6 +32,9 @@ function addRow($dbh, $table, $list)
     $itemList = substr(trim($itemList), 0, -1);
 
     $query = "INSERT INTO " . $table . " VALUES " . $itemList;
+
+    print_r($query);
+    echo '<br>';
 
     mysqli_query($dbh, $query);
 }

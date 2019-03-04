@@ -1,0 +1,1 @@
+SELECT COUNT(house) FROM users WHERE house='stark';

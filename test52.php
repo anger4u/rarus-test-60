@@ -1,5 +1,7 @@
 <?php
 
+// Это как доп решение через php функцию <========================================
+
 $host = 'localhost'; // имя хоста (уточняется у провайдера)
 $database = 'RARUS_TESTS'; // имя базы данных, которую вы должны создать
 $user = 'root'; // заданное вами имя пользователя, либо определенное провайдером
@@ -11,6 +13,9 @@ mysqli_select_db($dbh, $database) or die("Не могу подключиться
 function selectHouse($dbh, $tName)
 {
     $query = "SELECT DISTINCT house FROM " . $tName . " ORDER BY house";
+
+    print_r($query);
+    echo '<br>';
 
     mysqli_query($dbh, $query);
 }

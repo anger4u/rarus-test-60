@@ -1,0 +1,1 @@
+SELECT * FROM users WHERE birthday < '2002-10-03' ORDER BY first_name LIMIT 2, 3;

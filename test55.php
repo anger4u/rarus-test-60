@@ -10,9 +10,9 @@ $pswd = ''; // заданный вами пароль
 $dbh = mysqli_connect($host, $user, $pswd) or die("Не могу соединиться с MySQL. ");
 mysqli_select_db($dbh, $database) or die("Не могу подключиться к базе. ");
 
-function selectCol($dbh, $tName, $col)
+function selectTopics($dbh, $tName1, $tName2)
 {
-    $query = "SELECT " . $col . " FROM " . $tName . " ORDER BY birthday DESC";
+    $query = "SELECT " . $tName1 . ".id, " . $tName2 . ".first_name FROM " . $tName1 . ", " . $tName2 . " WHERE topics.user_id=users.id AND " . $tName2 . ".email LIKE '%@lannister.com' ORDER BY " . $tName1 . ".created_at ASC";
 
     print_r($query);
     echo '<br>';
@@ -20,4 +20,4 @@ function selectCol($dbh, $tName, $col)
     mysqli_query($dbh, $query);
 }
 
-selectCol($dbh, 'users', 'first_name');
+selectTopics($dbh, 'topics', 'users');
